@@ -1,0 +1,187 @@
+/* ---------------- SIGN-IN CONTAINER ---------------- */
+#auth-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    border: 2px solid #660124;
+    border-radius: 15px;
+    background-color: rgb(206, 141, 206);
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Sign-in input fields - MODIFIED FOR SEPARATE LINES */
+#auth-container input {
+    /* Full width and display: block makes them stack vertically */
+    width: 100%;
+    display: block; 
+    padding: 10px;
+    /* Adjusted margins to center them better when full width */
+    margin: 10px auto; 
+    border-radius: 5px;
+    border: 1px solid #6b0101;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* ---------------- FONT ---------------- */
+@font-face {
+    font-family: 'Jersey10';
+    src: url('fonts/Jersey10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ---------------- BODY ---------------- */
+body {
+    font-family: 'Jersey10', Verdana, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background: papayawhip;
+}
+
+/* ---------------- TODO CONTAINER ---------------- */
+#todo-container {
+    background: rgb(206, 141, 206);
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid #660124;
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* Header */
+#header h1 {
+    margin-bottom: 20px;
+}
+
+/* ---------------- INPUT BOX ---------------- */
+#input-box {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #6b0101;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+    max-width: 200px;
+}
+
+/* ---------------- BUTTONS ---------------- */
+#input-button, #delete-all-btn, #login-btn, #signup-btn {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #65b3c9;
+    transition: 0.3s;
+}
+
+#input-button:hover, #delete-all-btn:hover, #login-btn:hover, #signup-btn:hover {
+    background-color: #003e4f;
+}
+
+/* Adjusted margin for input button (assuming it's next to the input box) */
+#input-button {
+    margin-left: 5px;
+}
+
+/* Separate Sign-in and Sign-up buttons - RETAINED SEPARATION */
+#login-btn {
+    margin-right: 15px;
+    margin-left: 0;
+}
+
+#signup-btn {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+/* ---------------- TASK LIST ---------------- */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+li {
+    border: 1px solid maroon;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+/* Completed tasks */
+.completed {
+    text-decoration: line-through;
+    color: palevioletred;
+    border: 1px solid peachpuff;
+}
+
+/* Edit and Delete buttons - RETAINED INCREASED SPACING */
+.edit-btn, .delete-btn {
+    float: right;
+    color: crimson;
+    cursor: pointer;
+    margin-left: 15px; /* Increased margin for greater separation */
+}
+
+/* ---------------- TASK DATE DISPLAY ---------------- */
+.task-date {
+    font-size: 12px;
+    color: #ddd;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* ---------------- RESPONSIVENESS (Mobile Devices) - UPDATED AUTH INPUTS ---------------- */
+@media screen and (max-width: 500px) {
+    /* Smaller screen adjustments */
+
+    body {
+        margin-top: 20px;
+    }
+
+    /* Stack input and button on small screens */
+    #input-box {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #input-button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Stack sign-in and sign-up buttons */
+    #login-btn, #signup-btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    /* NOTE: #auth-container input is already set to 100% and display: block, 
+       so no further changes are needed here for mobile stacking. */
+
+    /* Adjust list item layout for mobile */
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edit-btn, .delete-btn {
+        float: none;
+        margin: 5px 0 0 10px;
+        align-self: flex-end;
+    }
+}
